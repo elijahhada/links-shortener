@@ -1,0 +1,14 @@
+type ShortLink {
+    full_link: String!
+    short_link: String!
+    clicks: Int!
+}
+
+type Mutation {
+    shortenLink(full_link: String!): ShortLink!
+    clickLink(short_link: String!): ShortLink!
+}
+
+type Query {
+    links: [ShortLink!]! @all
+}
